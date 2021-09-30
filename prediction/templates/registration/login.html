@@ -1,0 +1,22 @@
+
+{% load static %}
+{% block main %}
+
+<center><h1>Breast Cancer Recurrence Predictor</h1></center>
+
+ <link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
+
+<div class="login-form">
+<h2>Please login</h2>
+<form class="login" method="POST">
+  <div>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Login">
+    <br></br>
+    <p>Not having an account? <a href="{% url 'signup' %}">SingUp</a> / <a href="{% url 'home' %}">Home</a></p> 
+   
+  </div>
+</form>
+</div>
+{% endblock %}
